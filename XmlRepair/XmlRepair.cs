@@ -16,9 +16,10 @@ namespace XmlRepair
         /// <returns></returns>
         public static string RepairRegex(string xmlContent)
         {
-            string re = @"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]";
-            return Regex.Replace(xmlContent, re, "");
+            return XmlRepairRegex.Replace(xmlContent, "");
         }
+
+        private static Regex XmlRepairRegex = new Regex(@"[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]", RegexOptions.Compiled);
 
         /// <summary>
         /// Repairs content of xml file by copying only valid characters using string builder.

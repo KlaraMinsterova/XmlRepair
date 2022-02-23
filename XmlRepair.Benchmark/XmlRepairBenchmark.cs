@@ -3,6 +3,7 @@ using static XmlRepair.XmlRepair;
 
 namespace XmlRepair.Benchmark
 {
+    [MemoryDiagnoser]
     public class XmlRepairBenchmark
     {
         private static string xmlContent;
